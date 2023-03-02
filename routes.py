@@ -22,3 +22,33 @@ def save_data(username, email, password):
     c.execute("INSERT INTO register VALUES (?, ?, ?)", (username, email, password))
     conn.commit()
     conn.close()
+      
+# try:
+    
+#     conn = sqlite3.connect('cadastro.db')
+#     cursor = conn.cursor()
+    
+#     cursor.execute("DELETE from register WHERE email = 'anas@gmil.com'")
+    
+#     conn.commit()
+#     conn.close()
+#     print("os dados foram removidos com sucesso!")
+    
+# except sqlite3.Error as erro:
+#     print("Erro ao Excluir ", erro)
+    
+try:
+    conn = sqlite3.connect('cadastro.db')
+    cursor = conn.cursor()
+    
+    cursor.execute("UPDATE register SET email = 'lover288@gmail.com' WHERE email = 'lover277@gmail.com'")
+    
+    conn.commit()
+    conn.close()
+    print("os dados foram atualizados com sucesso!")
+    
+except sqlite3.Error as erro:
+    print("Erro ao atualizar ", erro)
+    
+
+
